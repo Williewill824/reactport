@@ -1,23 +1,39 @@
-  
-import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import {Route} from 'react-router-dom'
+import React, { Component } from 'react';
 import './App.css';
-import Home from "./components/index"
-import Resume from "./components/Resume"
-import Portfolio from "./components/Portfolio"
-import Contact from "./components/Contact"
+import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+import Main from './components/main';
+import { Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <>
-    <CssBaseline />
-      <Route exact path= "/" component={Home}/>
-      <Route path= "/resume" component={Resume}/>
-      <Route path= "/portfolio" component={Portfolio}/>
-      <Route path= "/contact" component={Contact}/>
-    </>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="demo-big-content">
+    <Layout>
+        <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MyPortfolio</Link>} scroll>
+            <Navigation>
+                <Link to="/resume">Resume</Link>
+                <Link to="/aboutme">About Me</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/contact">Contact</Link>
+            </Navigation>
+        </Header>
+        <Drawer title={<Link style={{textDecoration: 'none', color: 'black'}} to="/">MyPortfolio</Link>}>
+            <Navigation>
+              <Link to="/resume">Resume</Link>
+              <Link to="/aboutme">About Me</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contact</Link>
+            </Navigation>
+        </Drawer>
+        <Content>
+            <div className="page-content" />
+            <Main/>
+        </Content>
+    </Layout>
+</div>
+
+    );
+  }
 }
 
 export default App;

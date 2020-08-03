@@ -1,31 +1,39 @@
-import React from 'react';
-import {makeStyles} from "@material-ui/core/styles";
-import {Typography, Button, Grid, Box} from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
-import Navbar from "./Navbar";
+import React, { Component } from 'react';
+import { Grid, Cell, List, ListItem, ListItemContent } from 'react-mdl';
 
 
-const Contact = () => {
-    return (
-        <Box component="div">
-             <Navbar />
-            <Grid container justify="center">
-                <Box component="form">
-                    <Typography variant="h5" style={{color: "tomato", textAlign: "center", textTransform: "uppercase"}}> 
-                    Contact Info                  
-                    </Typography>
-                    <Typography variant="h5" style={{color: "tomato", textAlign: "center" }}> 
-                    email: willie.gomezjr12@gmail.com
-                    </Typography>
-                    <Typography variant="h5" style={{color: "tomato", textAlign: "center"}}> 
-                    mobile: 551-223-8530
-                    </Typography>
-                    
-                </Box>
-            </Grid>
-        </Box>
-       
+class Contact extends Component {
+  render() {
+    return(
+      <div className="contact-body">
+        <Grid className="contact-grid">
+          <Cell col={6}>
+            <h2>Contact Me </h2>
+            <hr/>
+            
+            <div className="contact-list">
+              <List>
+                <ListItem>
+                  <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
+                    <i className="fa fa-phone-square" aria-hidden="true"/>
+                    (551) 223-8530
+                  </ListItemContent>
+                </ListItem>
+
+                <ListItem>
+                  <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
+                    <i className="fa fa-envelope" aria-hidden="true"/>
+                    willie.gomezjr12@gmail.com
+                  </ListItemContent>
+                </ListItem>
+
+              </List>
+            </div>
+          </Cell>
+        </Grid>
+      </div>
     )
-};
+  }
+}
 
 export default Contact;
