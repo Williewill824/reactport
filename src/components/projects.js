@@ -3,6 +3,7 @@ import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, 
 import PasswordImg from "../images/generator.png"
 import BurgerImg from "../images/burger.png"
 import NBAdImg from "../images/nba.png"
+// import MacbookImg from "../images/macbook.jpg"
 
 
 class Projects extends Component {
@@ -23,7 +24,7 @@ class Projects extends Component {
                   Password Generator
             </CardText>
             <CardActions border>
-              <Button colored>Link</Button>
+              <a href="https://github.com/Williewill824/gettist" colored>Link</a>
 
             </CardActions>
            
@@ -36,7 +37,7 @@ class Projects extends Component {
               NBA Team Builder
             </CardText>
             <CardActions border>
-              <Button colored>Link</Button>
+              <a href="https://github.com/skylar112/Project-2-NBA-Team-Builder" colored>Link</a>
           
             </CardActions>
 
@@ -49,7 +50,7 @@ class Projects extends Component {
               Burger App
             </CardText>
             <CardActions border>
-              <Button colored>Link</Button>
+              <a href="https://github.com/Williewill824/burger" colored>Link</a>
           
             </CardActions>
            
@@ -81,9 +82,9 @@ class Projects extends Component {
       <div>
         <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
           <Tab>Projects</Tab>
-          <Tab>Javascript</Tab>
+          {/* <Tab>Javascript</Tab>
           <Tab>Nodejs</Tab>
-          <Tab>React</Tab>
+          <Tab>React</Tab> */}
         </Tabs>
 
 
